@@ -16,6 +16,6 @@ abstract class ServiceHub<S: MattService> {
 	service = s
   }
 
-  fun get() = service!!
+  fun get() = service ?: error("service was not installed for ${this::class.simpleName}")
 
 }
