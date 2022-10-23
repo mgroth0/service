@@ -1,6 +1,7 @@
 package matt.service
 
 import matt.model.idea.ServiceIdea
+import kotlin.jvm.Synchronized
 
 
 /*maybe these should just be called interfaces... services are different things related to servers and web and port programming*/
