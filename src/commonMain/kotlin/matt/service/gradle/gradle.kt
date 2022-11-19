@@ -1,6 +1,6 @@
 package matt.service.gradle
 
-import matt.model.mod.AbsoluteMod
+import matt.model.code.mod.AbsoluteMod
 import matt.service.MattService
 
 interface GradleService: MattService {

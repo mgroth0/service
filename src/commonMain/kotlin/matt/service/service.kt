@@ -1,6 +1,6 @@
 package matt.service
 
-import matt.model.idea.ServiceIdea
+import matt.model.code.idea.ServiceIdea
 import kotlin.jvm.Synchronized
 
 
