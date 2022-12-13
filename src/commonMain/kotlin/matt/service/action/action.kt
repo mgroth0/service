@@ -4,5 +4,5 @@ import matt.model.code.idea.ServiceIdea
 
 interface ActionAbilitiesService: ServiceIdea {
   fun input(prompt: String): String
-  fun confirm(s: String)
+  fun confirm(s: String): Boolean
 }
