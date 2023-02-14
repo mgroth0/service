@@ -1,7 +1,7 @@
 package matt.service
 
+import matt.lang.anno.OnlySynchronizedOnJvm
 import matt.model.code.idea.ServiceIdea
-import kotlin.jvm.Synchronized
 
 
 /*maybe these should just be called interfaces... services are different things related to servers and web and port programming*/
@@ -11,7 +11,7 @@ interface MattService: ServiceIdea
 abstract class ServiceHub<S: MattService> {
   private var service: S? = null
 
-  @Synchronized
+  @OnlySynchronizedOnJvm
   fun install(s: S) {
 	require(service == null)
 	service = s
