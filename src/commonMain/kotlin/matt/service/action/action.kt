@@ -8,5 +8,8 @@ interface ActionAbilitiesService: ServiceIdea {
   fun openFile(prompt: String): String?
   fun confirm(s: String): Boolean
   fun yesOrNo(s: String): YesOrNo
+  fun <T> yesOrNoAllowAllCommands(
+    prompts: Map<T,String>
+  ): Map<T,YesOrNo>
   fun <E: Enum<E>> enum(enumOptions: Array<E>, prompt: String): E
 }
