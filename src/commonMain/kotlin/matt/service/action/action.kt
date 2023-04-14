@@ -12,7 +12,7 @@ interface ActionAbilitiesService: ServiceIdea {
 	prompts: Map<T, String>
   ): Map<T, YesOrNo>
 
-  fun <E: Enum<E>> enum(enumOptions: Array<E>, prompt: String): E
+  fun <E: Enum<E>> enum(enumOptions: List<E>, prompt: String): E
 }
 
 object NoActionAbilities: ActionAbilitiesService {
@@ -22,5 +22,5 @@ object NoActionAbilities: ActionAbilitiesService {
   override fun confirm(s: String) = noActionAbilities()
   override fun yesOrNo(s: String) = noActionAbilities()
   override fun <T> yesOrNoAllowAllCommands(prompts: Map<T, String>) = noActionAbilities()
-  override fun <E: Enum<E>> enum(enumOptions: Array<E>, prompt: String) = noActionAbilities()
+  override fun <E: Enum<E>> enum(enumOptions: List<E>, prompt: String) = noActionAbilities()
 }
