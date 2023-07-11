@@ -1,6 +1,7 @@
 package matt.service
 
 import matt.lang.anno.OnlySynchronizedOnJvm
+import matt.lang.require.requireNull
 import matt.model.code.idea.ServiceIdea
 
 
@@ -14,7 +15,7 @@ abstract class ServiceHub<S : MattService> {
 
     @OnlySynchronizedOnJvm
     fun install(s: S) {
-        require(service == null)
+        requireNull(service)
         service = s
     }
 
