@@ -19,10 +19,10 @@ abstract class ServiceHub<S : MattService> {
         service = s
     }
 
-   /* @OnlySynchronizedOnJvm
-    fun clear() {
-        service = null
-    }*/
+    /* @OnlySynchronizedOnJvm
+     fun clear() {
+         service = null
+     }*/
 
     fun get() = service ?: error("service was not installed for ${this::class.simpleName}")
 
