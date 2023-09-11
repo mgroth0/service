@@ -1,6 +1,6 @@
 package matt.service.frames
 
-import matt.model.data.file.FilePath
+import matt.lang.model.file.FilePath
 import matt.service.MattService
 
 interface MFrameGrabber : MattService {

@@ -16,5 +16,8 @@
   },
   "js": {
     "type": "lib"
+  },
+  "android": {
+    "type": "Lib"
   }
 }
