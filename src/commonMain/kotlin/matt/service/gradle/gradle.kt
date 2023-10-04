@@ -1,13 +1,17 @@
 package matt.service.gradle
 
 import matt.model.code.mod.AbsoluteMod
+import matt.model.code.mod.GradleTaskSelector
 import matt.model.code.mod.RelativeToKMod
 import matt.service.MattService
 
+/*TODO: Split this into proper scopes*/
 interface GradleService : MattService {
     val rootDir: String
     fun project(path: String): GradleProjectService
-    val allKSubProjects: List<RelativeToKMod>
+    val allKSubProjects: Set<RelativeToKMod>
+    fun runTasks(vararg tasks: GradleTaskSelector)
+    fun propertyValue(propertyName: String): String?
 }
 
 object NoGradleService : GradleService {
@@ -16,8 +20,16 @@ object NoGradleService : GradleService {
 
     override fun project(path: String) = error("no gradle service")
 
-    override val allKSubProjects: List<RelativeToKMod>
+    override val allKSubProjects: Set<RelativeToKMod>
         get() = error("no gradle service")
+
+    override fun runTasks(vararg tasks: GradleTaskSelector) {
+        TODO("Not yet implemented")
+    }
+
+    override fun propertyValue(propertyName: String): String? {
+        TODO("Not yet implemented")
+    }
 }
 
 interface GradleProjectService : MattService, AbsoluteMod {

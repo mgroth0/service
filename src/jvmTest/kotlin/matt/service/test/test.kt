@@ -6,7 +6,7 @@ import matt.service.MattService
 import matt.service.ServiceHub
 import matt.service.action.NoActionAbilities
 import matt.service.gradle.NoGradleService
-import matt.test.JupiterTestAssertions.assertRunsInOneMinute
+import matt.test.assertions.JupiterTestAssertions.assertRunsInOneMinute
 import org.junit.jupiter.api.assertThrows
 import kotlin.test.Test
 
