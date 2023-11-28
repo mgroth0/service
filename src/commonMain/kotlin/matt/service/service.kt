@@ -1,7 +1,8 @@
 package matt.service
 
-import matt.lang.anno.OnlySynchronizedOnJvm
-import matt.lang.require.requireNull
+import matt.lang.assertions.require.requireNull
+import matt.lang.sync.ReferenceMonitor
+import matt.lang.sync.inSync
 import matt.model.code.idea.ServiceIdea
 
 
@@ -10,11 +11,10 @@ import matt.model.code.idea.ServiceIdea
 interface MattService : ServiceIdea
 
 /*alternative name idea: ServiceRegistry*/
-abstract class ServiceHub<S : MattService> {
+abstract class ServiceHub<S : MattService> : ReferenceMonitor {
     private var service: S? = null
 
-    @OnlySynchronizedOnJvm
-    fun install(s: S) {
+    fun install(s: S) = inSync {
         requireNull(service)
         service = s
     }
