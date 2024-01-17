@@ -5,7 +5,6 @@ import matt.model.code.mod.GradleTaskSelector
 import matt.model.code.mod.RelativeToKMod
 import matt.service.MattService
 
-/*TODO: Split this into proper scopes*/
 interface GradleService : MattService {
     val rootDir: String
     fun project(path: String): GradleProjectService
@@ -24,11 +23,11 @@ object NoGradleService : GradleService {
         get() = error("no gradle service")
 
     override fun runTasks(vararg tasks: GradleTaskSelector) {
-        TODO("Not yet implemented")
+        TODO()
     }
 
     override fun propertyValue(propertyName: String): String? {
-        TODO("Not yet implemented")
+        TODO()
     }
 }
 
