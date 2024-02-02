@@ -1,5 +1,5 @@
 package matt.service.auto
 
 interface AutoService {
-	fun openFile(filePath: String)
+    fun openFile(filePath: String)
 }
