@@ -5,6 +5,5 @@ interface LocalSharedMemory
 
 data object NoLocalSharedMemory: LocalSharedMemory {
     private fun test() {
-
     }
 }

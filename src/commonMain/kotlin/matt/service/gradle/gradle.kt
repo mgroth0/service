@@ -1,14 +1,14 @@
 package matt.service.gradle
 
+import matt.lang.shutdown.ShutdownContext
 import matt.model.code.mod.AbsoluteMod
 import matt.model.code.mod.GradleTaskSelector
-import matt.model.code.mod.RelativeToKMod
 import matt.service.MattService
 
 interface GradleService : MattService {
     val rootDir: String
     fun project(path: String): GradleProjectService
-    val allKSubProjects: Set<RelativeToKMod>
+    context(ShutdownContext)
     fun runTasks(vararg tasks: GradleTaskSelector)
     fun propertyValue(propertyName: String): String?
 }
@@ -19,9 +19,8 @@ object NoGradleService : GradleService {
 
     override fun project(path: String) = error("no gradle service")
 
-    override val allKSubProjects: Set<RelativeToKMod>
-        get() = error("no gradle service")
 
+    context(ShutdownContext)
     override fun runTasks(vararg tasks: GradleTaskSelector) {
         TODO()
     }
